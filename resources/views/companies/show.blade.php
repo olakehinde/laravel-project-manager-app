@@ -33,9 +33,9 @@
 		<div class="sidebar-module">
 			<h4>Manage Project</h4>
 			<ol class="list-unstyled">
-				<li><a href="#">Edit</a></li>
-				<li><a href="#">Delete</a></li>
-				<li><a href="#">Add new Member</a></li>
+				<li style="padding-bottom: 3px"><a href="/companies/{{ $company->id }}/edit" class="btn btn-primary">Edit</a></li>
+				<li style="padding-bottom: 3px"><a href="/companies/{{ $company->id }}/delete" class="btn btn-danger">Delete</a></li>
+				<li style="padding-bottom: 3px"><a href="#" class="btn btn-success">Add new Member</a></li>
 			</ol>
 		</div>
 
