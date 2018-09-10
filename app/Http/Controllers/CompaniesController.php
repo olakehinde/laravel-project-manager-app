@@ -84,7 +84,7 @@ class CompaniesController extends Controller
                                 ]);
         // check if the update was successsful
         if ($companyUpdate) {
-            return redirect()->route('companies.show')->with('success', 'Company edited successfully');
+            return redirect()->route('companies.show', ['company' => $company->id])->with('success', 'Company edited successfully');
         }
         // if update is not successful, redirect back with the input
         return back()->withInput();
