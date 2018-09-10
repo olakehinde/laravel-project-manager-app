@@ -75,7 +75,19 @@ class CompaniesController extends Controller
      */
     public function update(Request $request, Company $company)
     {
-        //
+        //find the item and update it.
+        // can also use "Company::where('id', $company-id)" to find item by id from the db
+        $companyUpdate = Company::find($company->id)
+                                ->update([
+                                    'name'=>$request->input('name'),
+                                    'description'=>$request->input('description')
+                                ]);
+        // check if the update was successsful
+        if ($companyUpdate) {
+            return redirect()->route('companies.show')->with('success', 'Company edited successfully');
+        }
+        // if update is not successful, redirect back with the input
+        return back()->withInput();
     }
 
     /**
