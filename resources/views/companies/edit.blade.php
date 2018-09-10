@@ -46,11 +46,11 @@
 
 	<div class="col-lg-3 col-md-3 col-sm-3 pull-right blog-sidebar">
 		<div class="sidebar-module">
-			<h4>Manage Project</h4>
+			<h4>Action</h4>
 			<ol class="list-unstyled">
-				<li style="padding-bottom: 3px"><a href="/companies/{{ $company->id }}/edit" class="btn btn-primary">Edit</a></li>
-				<li style="padding-bottom: 3px"><a href="/companies/{{ $company->id }}/delete" class="btn btn-danger">Delete</a></li>
-				<li style="padding-bottom: 3px"><a href="#" class="btn btn-success">Add new Member</a></li>
+				<li style="padding-bottom: 3px"><a href="/companies/{{ $company->id }}" class="btn btn-primary">View company</a></li>
+				<li style="padding-bottom: 3px"><a href="/companies" class="btn btn-danger">View all Companies</a></li>
+				
 			</ol>
 		</div>
 
