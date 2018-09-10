@@ -34,8 +34,25 @@
 			<h4>Manage Project</h4>
 			<ol class="list-unstyled">
 				<li style="padding-bottom: 3px"><a href="/companies/{{ $company->id }}/edit" class="btn btn-primary">Edit</a></li>
-				<li style="padding-bottom: 3px"><a href="/companies/{{ $company->id }}/delete" class="btn btn-danger">Delete</a></li>
-				<li style="padding-bottom: 3px"><a href="#" class="btn btn-success">Add new Member</a></li>
+				<li style="padding-bottom: 3px">
+					<a href="#" class="btn btn-danger"
+						onclick="
+						var result = confirm('Are you sure you want to delete Company?');
+						if (result) {
+							event.preventDefault();
+							document.getElementById('delete-form').submit();
+						}
+						">
+						Delete
+					</a>
+				</li>
+
+				<form id="delete-form" action="{{ route('companies.destroy',['company' => $company->id]) }}" method="post" style="display: none;">
+					<input type="hidden" name="_method" value="delete">
+					{{ csrf_field() }}
+				</form>
+
+				<!-- <li style="padding-bottom: 3px"><a href="#" class="btn btn-success">Add new Member</a></li> -->
 			</ol>
 		</div>
 
