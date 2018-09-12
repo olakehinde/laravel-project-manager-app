@@ -20,20 +20,13 @@
 	</div>
 
 	<div class="col-lg-3 col-md-3 col-sm-3 pull-right blog-sidebar">
-		<!-- <div class="sidebar-module sidebar-module-inset">
-			<h4>About</h4>
-			<p>Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit,</em> sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</div> -->
-
 		<div class="sidebar-module">
+			<a href="/companies" class="btn btn-info">View Companies</a>
+			<br><hr>
 			<h4>Manage Project</h4>
 			<ol class="list-unstyled">
 				<li style="padding-bottom: 3px"><a href="/companies/{{ $company->id }}/edit" class="btn btn-primary">Edit</a></li>
+
 				<li style="padding-bottom: 3px">
 					<a href="#" class="btn btn-danger"
 						onclick="
@@ -46,6 +39,11 @@
 						Delete
 					</a>
 				</li>
+
+				<li style="padding-bottom: 3px"><a href="/projects/create" class="btn btn-success">Add new Project</a></li>
+				<li style="padding-bottom: 3px"><a href="/companies/create" class="btn btn-success">Add new Company</a></li>
+
+
 
 				<form id="delete-form" action="{{ route('companies.destroy',['company' => $company->id]) }}" method="post" style="display: none;">
 					<input type="hidden" name="_method" value="delete">
